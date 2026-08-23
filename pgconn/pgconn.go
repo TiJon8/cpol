@@ -46,6 +46,14 @@ type PgConn struct {
 	simpleQuery SimpleQuery // to-do
 }
 
+func ParseConfig(configMap map[string]string) (*ConnectionConfig, error) {
+	config, err := ParseConfigMap(configMap)
+	if err != nil {
+		return nil, err
+	}
+	return config, nil
+}
+
 func ConnectConfig(ctx context.Context, config *ConnectionConfig) (*PgConn, error) {
 	if !config.createdByParsingConfig {
 		panic("not created by ParseConfig")
