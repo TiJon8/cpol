@@ -9,7 +9,7 @@
 Get pg cpol
 
 ```bash
-  go get https://github.com/TiJon8/cpol
+  go get github.com/TiJon8/cpol
 ```
     
 ## Usage
